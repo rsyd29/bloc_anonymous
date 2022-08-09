@@ -43,7 +43,10 @@ class MyHomePage extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: ((context) {
-                      return ShowMeCounter();
+                      return BlocProvider.value(
+                        value: context.read<CounterCubit>(),
+                        child: ShowMeCounter(),
+                      );
                     }),
                   ),
                 );
